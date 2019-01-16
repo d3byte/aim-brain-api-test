@@ -1,0 +1,1 @@
+Aimbrain.api.setKeyAndSecret(API_KEY, API_SECRET);

@@ -1,0 +1,18 @@
+{
+  "name": "aim-brain-api-tester",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:d3byte/aim-brain-api-tester.git",
+  "license": "MIT",
+  "scripts": {
+    "dev": "run-p build-css live-server",
+    "live-server": "live-server --port=5500 --no-browser --watch=./js,./style/css",
+    "build-css": "./bin/build-css"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5"
+  }
+}
