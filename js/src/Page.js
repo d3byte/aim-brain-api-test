@@ -8,6 +8,7 @@ class Page {
         this.bindSubmitEvent = this.bindSubmitEvent.bind(this);
         this.submitHandler = this.submitHandler.bind(this);
         this.proceedHandler = this.proceedHandler.bind(this);
+        this.bindBehaviorCollection = this.bindBehaviorCollection.bind(this);
     }
 
     proceedHandler() {}
@@ -16,6 +17,12 @@ class Page {
         this.form = document.getElementById(this.formId);
         if (!this.form) { return }
         this.form.addEventListener('submit', this.submitHandler);
+    }
+
+    bindBehaviorCollection() {
+        const element = document.body;
+        Aimbrain.behaviour.setAimbrainId('document-body', element);
+        Aimbrain.behaviour.startTracking();
     }
 
     submitHandler(e) {

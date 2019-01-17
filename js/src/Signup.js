@@ -3,15 +3,17 @@ class Signup extends Page {
         super('voice', 'signup-form');
 
         this.handleVoiceEnrollment = this.handleVoiceEnrollment.bind(this);
+        this.handleFaceEnrollment = this.handleFaceEnrollment.bind(this);
 
         this.bindSubmitEvent();
+        this.bindBehaviorCollection();
     }
 
     proceedHandler() {
         let isSessionActive = true;
         switch (this.type) {
             case 'facial':
-                return null;
+                return this.handleFaceEnrollment();
             case 'voice':
                 return this.handleVoiceEnrollment();
             default:
@@ -45,5 +47,31 @@ class Signup extends Page {
             });
         }
         handleEnrollmentStage(tokenKeys[currentStageIndex]);
+    }
+
+    handleFaceEnrollment() {
+        Aimbrain.facial.recordFaceVideo().then((result) => {
+            console.log(result);
+            Aimbrain.facial.enrollWithData(result).then(res => {
+                if (res.imagesCount > 0) {
+                    alert('You have enrolled!');
+                }
+            }).catch(err => {
+                console.log(err);
+            })
+        }).catch((error) => {
+            // video recording failed, use error code find out why.
+            switch (error) {
+                case Aimbrain.facial.RecordingError.PopupClosed:
+                // popup closed by user
+                break;
+                case Aimbrain.facial.RecordingError.NotSupported:
+                // browser does not support recording
+                break;
+                case Aimbrain.facial.RecordingError.NoDevice:
+                // there is no recording device present
+                break;
+            }
+        });
     }
 }
