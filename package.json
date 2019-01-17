@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "run-p build-css live-server",
-    "live-server": "live-server --port=5500 --no-browser --watch=./js,./style/css",
+    "live-server": "live-server --port=5500 --no-browser --watch=./js,./style/css,./index.html",
     "build-css": "./bin/build-css"
   },
   "devDependencies": {

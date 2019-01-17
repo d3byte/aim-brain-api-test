@@ -1,1 +1,1 @@
-node-sass --watch --include-path style/scss style/scss/main.scss style/css/main.css
+node-sass --watch --include-path style/scss style/scss/*.scss style/css/main.css

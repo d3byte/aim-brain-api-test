@@ -1,3 +1,6 @@
-p {
-    color: black;
-}
+@import "./base/style.scss";
+
+@import "./pages/signup/style.scss";
+
+@import "./components/header/style.scss";
+@import "./components/form/style.scss";

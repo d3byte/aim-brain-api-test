@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background: white;
+
+    &__title {
+        margin: 0;
+        color: #5b618a;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin:0;
+
+        &__item {
+            &:first-child {
+                margin-right: 30px;
+            }
+
+            &__button {
+                padding: 6px 30px;
+                border: none;
+                background: #2c2c54;
+                border-radius: 8px;
+                color: white;
+            }
+        }
+    }
+}

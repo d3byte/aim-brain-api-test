@@ -9,10 +9,72 @@
     <link rel="stylesheet" href="style/css/main.css" />
 </head>
 <body>
-    <p>Woah! Styles! Grrra</p>
+    <header class="header">
+        <h1 class="header__title">AimBrain</h1>
+        <ul class="header__nav">
+            <li class="header__nav__item">
+                <button id="signin" class="header__nav__item__button">Signin</button>
+            </li>
+            <li class="header__nav__item">
+                <button id="signup" class="header__nav__item__button">Signup</button>
+            </li>
+        </ul>
+    </header>
+
+    <section class="section" id="signup">
+        <main class="signup">
+            <h2 class="signup__title">Signup</h2>
+            <form id="signup-form" class="form">
+                <div id="stage-0">
+                    <p>Choose the way of authentication</p>
+                    <div class="form-group">
+                        <label class="form__checkbox-with-label">
+                            <input checked value="voice" class="form__checkbox-with-label__checkbox" type="radio" name="type" />
+                            Voice
+                        </label>
+                        <label class="form__checkbox-with-label">
+                            <input value="facial" class="form__checkbox-with-label__checkbox" type="radio" name="type" />
+                            Facial
+                        </label>
+                    </div>
+                    <button type="submit" class="form__button">
+                        Proceed
+                    </button>
+                </div>
+            </form>
+        </main>
+    </section>
+
+    <section class="section" id="signin">
+        <main class="signup">
+            <h2 class="signup__title">Signin</h2>
+            <form id="signin-form" class="form">
+                <div id="stage-0">
+                    <p>Choose the way of authentication</p>
+                    <div class="form-group">
+                        <label class="form__checkbox-with-label">
+                            <input checked value="voice" class="form__checkbox-with-label__checkbox" type="radio" name="type" />
+                            Voice
+                        </label>
+                        <label class="form__checkbox-with-label">
+                            <input value="facial" class="form__checkbox-with-label__checkbox" type="radio" name="type" />
+                            Facial
+                        </label>
+                    </div>
+                    <button type="submit" class="form__button">
+                        Proceed
+                    </button>
+                </div>
+            </form>
+        </main>
+    </section>
 
     <script src="js/vendor/aimbrain-web-sdk.min.js"></script>
     <script src="js/src/credentials.js"></script>
+    <script src="js/src/Aimbrain.js"></script>
+    <script src="js/src/Page.js"></script>
+    <script src="js/src/Signup.js"></script>
+    <script src="js/src/Signin.js"></script>
     <script src="js/src/main.js"></script>
 </body>
 </html>

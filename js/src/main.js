@@ -1,1 +1,2 @@
-Aimbrain.api.setKeyAndSecret(API_KEY, API_SECRET);
+const SignupPage = new Signup();
+const SigninPage = new Signin();
